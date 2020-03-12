@@ -1,0 +1,1 @@
+This is a project for the Multimedia Technology course of the school ECE NTUA
