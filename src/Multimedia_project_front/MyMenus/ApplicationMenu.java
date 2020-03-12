@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 
 public class ApplicationMenu extends Menu {
     private String nameOfFile;
@@ -46,10 +48,16 @@ public class ApplicationMenu extends Menu {
                 //State of load
                 Stage loadStage = new Stage();
 
+                /* Get current direcory path */
+                Path path = FileSystems.getDefault().getPath(".");
+                String pathToFile = path.toString().concat("/example");
+
+                //System.out.println(pathToFile); //for test
+
                 Text fileNameOut = new Text("Scenario ID");
                 TextField fileNameIn = new TextField("default");
                 Text dirPathOut = new Text("Source Directory");
-                TextField dirPathIn = new TextField("/home/ritos/Documents/Java_project/IntelliJ_projects/JavaFXTest1/example");
+                TextField dirPathIn = new TextField(pathToFile);
 
                 Button openButton = new Button("Open");
                 Button okButton = new Button("OK");
